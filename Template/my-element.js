@@ -3,13 +3,23 @@ class myElement extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" })
   }
+
+  static get observedAttributes() {
+    return ["title", "parrafo", "img"];
+  }
+  attributeChangedCallback(attr, oldVal, newVal) {
+    if(oldVal !== newVal) {
+      this[attr] = newVal;
+    }
+  }
   getTemplate() {
     const template = document.createElement('template');
     template.innerHTML = `
       <section>
-        <h2 class="title">Hola mundo!</h2>
+        <h2>${this.title}</h2>
         <div>
-          <p>Más texto de ejemplo</p>
+          <p>${this.parrafo}</p>
+          <img src=${this.img}/>
         </div>
       </section>
       ${this.getStyles()}
@@ -19,7 +29,7 @@ class myElement extends HTMLElement {
   getStyles() {
     return `
       <style>
-        .h2 {
+        h2 {
           color: red;
         }
       </style>

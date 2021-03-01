@@ -5,21 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom elements</title>
-    <style>
-      .h2 {
-        color: blue;
-      }
-    </style>
   </head>
   <body>
     <h2 class="title">Título</h2>
-    <template>
-      <h2>Hi world again</h2>
-      <div>
-        <p>This is an example text</p>
-      </div>
-    </template>
-    <my-element></my-element>
+    <my-element
+      title="Este es un título"
+      parrafo="Texto del párrafo"
+      img="https://avatars3.githubusercontent.com/u/1905708?s=280&v=4/"
+    ></my-element>
     <script type="module" src="./my-element.js"></script>
   </body>
 </html>
