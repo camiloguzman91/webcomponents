@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom properties</title>
+    <style>
+      my-element {
+        --primary-color: blue;
+        --heading-primary: 40px;
+      }
+      .second {
+        --primary-color: red;
+      }
+      .third {
+        --secondary-color: lime;
+      }
+    </style>
+  </head>
+  <body>
+    <my-element>
+      <span slot="title">Un componente 1</span>
+      <span class="text" slot="parrafo">Texto ejemplo</span>
+    </my-element>
+    <my-element class="second">
+      <span slot="title">Un componente 2</span>
+      <span class="text" slot="parrafo">Texto ejemplo</span>
+    </my-element>
+    <my-element class="third">
+      <span slot="title">Un componente 3</span>
+      <span slot="parrafo">Texto ejemplo</span>
+    </my-element>
+    <script src="./my-element.js"></script>
+  </body>
+</html>
